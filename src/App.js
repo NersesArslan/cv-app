@@ -1,6 +1,9 @@
 import "./App.css";
 import React, { Component } from "react";
 import General from "./components/General";
+import Education from "./components/Education";
+import Professional from "./components/Professional";
+import CV from "./components/CV";
 
 class App extends Component {
   constructor() {
@@ -10,7 +13,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        <General />
+        <div className="container">
+          <General />
+          <Education />
+          <Professional />
+        </div>
+        <CV />
       </div>
     );
   }

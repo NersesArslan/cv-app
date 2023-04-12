@@ -17,26 +17,25 @@ body {
   justify-content: center;
 }
 
-.General {
+.General,
+.Education,
+.Professional {
   margin-top: 100px;
-
   width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15px;
 }
 
-form {
+/* form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  max-width: 300px;
-  border: 1px solid black;
-}
+  width: 300px;
+} */
 
 input {
   width: 200px;
@@ -45,4 +44,19 @@ input {
 form > div {
   display: flex;
   flex-direction: column;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+}
+
+.cv {
+  border: 1px solid black;
 }

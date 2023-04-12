@@ -31,9 +31,6 @@ class General extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(
-      this.state.name + " " + this.state.email + " " + this.state.number
-    );
 
     this.setState({
       test: this.state.test.concat(this.state.name),
@@ -45,6 +42,9 @@ class General extends Component {
     });
   }
 
+  editForm() {
+    alert("you clicked the edit button!");
+  }
   render() {
     const { test, test2, test3 } = this.state;
     return (
@@ -60,7 +60,7 @@ class General extends Component {
           </div>
 
           <div>
-            <label>Email</label>
+            <label>E-mail</label>
             <input
               type="email"
               value={this.state.email}
@@ -76,9 +76,12 @@ class General extends Component {
               onChange={this.handleNumber}
             />
           </div>
-          <button type="submit" value="Submit">
-            Submit
-          </button>
+          <div className="buttons">
+            <button type="submit" value="Submit">
+              Submit
+            </button>
+            <button onClick={this.editForm}>Edit</button>
+          </div>
         </form>
         <Render test={test} test2={test2} test3={test3} />
       </div>
