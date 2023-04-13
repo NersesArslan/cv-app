@@ -59,4 +59,10 @@ form > div {
 
 .cv {
   border: 1px solid black;
+  /* height: 400px;
+  width: 400px; */
+}
+
+.CV-Template {
+  border: 1px solid black;
 }
