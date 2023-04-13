@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 
 export default class Education extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.props.onSubmit}>
           <div>
             <label>College/University:</label>
             <input
@@ -20,16 +20,16 @@ export default class Education extends Component {
           <div>
             <label>Major</label>
             <input
-              type="email"
-              onChange={this.props.onEmailChange}
-              value={this.props.emailValue}
+              type="text"
+              onChange={this.props.onMajorChange}
+              value={this.props.majorValue}
             />
           </div>
           <div>
             <label>From</label>
             <input
               type="date"
-              onChange={this.props.onPhoneChange}
+              onChange={this.props.onDateChange}
               value={this.props.phoneValue}
             />
           </div>
@@ -37,10 +37,13 @@ export default class Education extends Component {
             <label>To</label>
             <input
               type="date"
-              onChange={this.props.onPhoneChange}
+              onChange={this.props.onToDate}
               value={this.props.phoneValue}
             />
           </div>
+          <button type="submit" value={this.props.buttonValue}>
+            Submit
+          </button>
         </form>
       </div>
     );

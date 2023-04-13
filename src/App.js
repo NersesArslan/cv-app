@@ -21,9 +21,21 @@ class App extends Component {
         number: "",
       },
       phoneValue: [],
+
+      college: {
+        text: "",
+      },
+      collegeValue: [],
+      major: { text: "" },
+      majorValue: [],
+      from: { text: "" },
+      fromValue: [],
+      to: { text: "" },
+      toValue: [],
     };
 
     this.onSubmitForm = this.onSubmitForm.bind(this);
+    this.onSubmitEdu = this.onSubmitEdu.bind(this);
   }
 
   handleName = (e) => {
@@ -47,6 +59,29 @@ class App extends Component {
       },
     });
   };
+
+  handleCollege = (e) => {
+    this.setState({
+      college: {
+        text: e.target.value,
+      },
+    });
+  };
+
+  handleMajor = (e) => {
+    this.setState({
+      major: {
+        text: e.target.value,
+      },
+    });
+  };
+  handleStartDate = (e) => {
+    this.setState({
+      from: {
+        text: e.target.value,
+      },
+    });
+  };
   onSubmitForm = (e) => {
     e.preventDefault();
     this.setState({
@@ -56,12 +91,37 @@ class App extends Component {
       email: { text: "" },
       phoneValue: this.state.phoneValue.concat(this.state.phone.number),
       phone: { number: "" },
+      fromValue: this.state.fromValue.concat(this.state.from.text),
+      from: { text: "" },
     });
   };
 
+  onSubmitEdu = (e) => {
+    e.preventDefault(
+      this.setState({
+        collegeValue: this.state.collegeValue.concat(this.state.college.text),
+        college: { text: "" },
+        majorValue: this.state.majorValue.concat(this.state.major.text),
+        major: { text: "" },
+      })
+    );
+  };
+
   render() {
-    const { name, nameValue, email, emailValue, phone, phoneValue } =
-      this.state;
+    const {
+      name,
+      nameValue,
+      email,
+      emailValue,
+      phone,
+      phoneValue,
+      college,
+      collegeValue,
+      major,
+      majorValue,
+      from,
+      fromValue,
+    } = this.state;
     return (
       <div>
         <div className="container">
@@ -75,13 +135,25 @@ class App extends Component {
             buttonValue={"Submit"}
             onSubmit={this.onSubmitForm}
           />
-          <Education />
+          <Education
+            onChange={this.handleCollege}
+            value={college.text}
+            onMajorChange={this.handleMajor}
+            majorValue={major.text}
+            onDateChange={this.handleStartDate}
+            phoneValue={from.text}
+            buttonValue={"Submit"}
+            onSubmit={this.onSubmitEdu}
+          />
         </div>
-
+        <h1>Lie about it all you want, you'll still get underpaid.</h1>
         <div class="CV-Template">
           <p>{nameValue}</p>
           <p>{emailValue}</p>
           <p>{phoneValue}</p>
+          <p>{collegeValue}</p>
+          <p>{majorValue}</p>
+          <p>{fromValue}</p>
         </div>
       </div>
     );
