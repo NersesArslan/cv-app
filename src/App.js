@@ -64,35 +64,16 @@ class App extends Component {
     return (
       <div>
         <div className="container">
-          <form onSubmit={this.onSubmitForm}>
-            <div className="Name">
-              <label>Name</label>
-              <input type="text" onChange={this.handleName} value={name.text} />
-            </div>
-
-            <div>
-              <label>E-mail</label>
-              <input
-                type="email"
-                onChange={this.handleEmail}
-                value={email.text}
-              />
-            </div>
-
-            <div>
-              <label>Phone Number</label>
-              <input
-                type="text"
-                onChange={this.handlePhone}
-                value={phone.number}
-              />
-            </div>
-            <div className="buttons">
-              <button type="submit" value="Submit">
-                Submit
-              </button>
-            </div>
-          </form>
+          <General
+            onChange={this.handleName}
+            value={name.text}
+            onEmailChange={this.handleEmail}
+            emailValue={email.text}
+            onPhoneChange={this.handlePhone}
+            phoneValue={phone.number}
+            buttonValue={"Submit"}
+            onSubmit={this.onSubmitForm}
+          />
         </div>
 
         <div class="CV-Template">
