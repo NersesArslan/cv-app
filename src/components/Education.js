@@ -25,6 +25,7 @@ export default class Education extends Component {
               value={this.props.majorValue}
             />
           </div>
+
           <div>
             <label>From</label>
             <input
@@ -41,6 +42,7 @@ export default class Education extends Component {
               value={this.props.toValue}
             />
           </div>
+
           <button type="submit" value={this.props.buttonValue}>
             Submit
           </button>

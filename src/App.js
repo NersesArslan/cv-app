@@ -22,10 +22,7 @@ class App extends Component {
         number: "",
       },
       phoneValue: [],
-
-      college: {
-        text: "",
-      },
+      college: { text: "" },
       collegeValue: [],
       major: { text: "" },
       majorValue: [],
@@ -33,6 +30,16 @@ class App extends Component {
       fromValue: [],
       to: { text: "" },
       toValue: [],
+      company: { text: "" },
+      companyValue: [],
+      position: { text: "" },
+      positionValue: [],
+      task: { text: "" },
+      taskValue: [],
+      workFrom: { text: "" },
+      workFromValue: [],
+      workTo: { text: "" },
+      workToValue: [],
     };
 
     this.onSubmitForm = this.onSubmitForm.bind(this);
@@ -90,6 +97,40 @@ class App extends Component {
       },
     });
   };
+
+  handleCompany = (e) => {
+    this.setState({
+      company: {
+        text: e.target.value,
+      },
+    });
+  };
+  handlePosition = (e) => {
+    this.setState({
+      position: { text: e.target.value },
+    });
+  };
+
+  handleTask = (e) => {
+    this.setState({
+      task: { text: e.target.value },
+    });
+  };
+  handleWorkStartDate = (e) => {
+    this.setState({
+      workFrom: {
+        text: e.target.value,
+      },
+    });
+  };
+  handleWorkTo = (e) => {
+    this.setState({
+      workTo: {
+        text: e.target.value,
+      },
+    });
+  };
+
   onSubmitForm = (e) => {
     e.preventDefault();
     this.setState({
@@ -103,18 +144,33 @@ class App extends Component {
   };
 
   onSubmitEdu = (e) => {
-    e.preventDefault(
-      this.setState({
-        collegeValue: this.state.collegeValue.concat(this.state.college.text),
-        college: { text: "" },
-        majorValue: this.state.majorValue.concat(this.state.major.text),
-        major: { text: "" },
-        fromValue: this.state.fromValue.concat(this.state.from.text),
-        from: { text: "" },
-        toValue: this.state.toValue.concat(this.state.to.text),
-        to: { text: "" },
-      })
-    );
+    e.preventDefault();
+    this.setState({
+      collegeValue: this.state.collegeValue.concat(this.state.college.text),
+      college: { text: "" },
+      majorValue: this.state.majorValue.concat(this.state.major.text),
+      major: { text: "" },
+      fromValue: this.state.fromValue.concat(this.state.from.text),
+      from: { text: "" },
+      toValue: this.state.toValue.concat(this.state.to.text),
+      to: { text: "" },
+    });
+  };
+
+  onSubmitWork = (e) => {
+    e.preventDefault();
+    this.setState({
+      companyValue: this.state.companyValue.concat(this.state.company.text),
+      company: { text: "" },
+      positionValue: this.state.positionValue.concat(this.state.position.text),
+      position: { text: "" },
+      taskValue: this.state.taskValue.concat(this.state.task.text),
+      task: { text: "" },
+      workFromValue: this.state.workFromValue.concat(this.state.workFrom.text),
+      workFrom: { text: "" },
+      workToValue: this.state.workToValue.concat(this.state.workTo.text),
+      workTo: { text: "" },
+    });
   };
 
   render() {
@@ -133,6 +189,16 @@ class App extends Component {
       fromValue,
       to,
       toValue,
+      company,
+      companyValue,
+      positionValue,
+      position,
+      task,
+      taskValue,
+      workFrom,
+      workFromValue,
+      workTo,
+      workToValue,
     } = this.state;
     return (
       <div>
@@ -159,17 +225,41 @@ class App extends Component {
             buttonValue={"Submit"}
             onSubmit={this.onSubmitEdu}
           />
-          <Work />
+          <Work
+            onChange={this.handleCompany}
+            value={company.text}
+            onPositionChange={this.handlePosition}
+            positionValue={position.text}
+            onTaskChange={this.handleTask}
+            taskValue={task.text}
+            onWorkDateChange={this.handleWorkStartDate}
+            workDateValue={workFrom.text}
+            onToDate={this.handleWorkTo}
+            toDateValue={workTo.text}
+            buttonValue={"Submit"}
+            onSubmit={this.onSubmitWork}
+          />
         </div>
-        <h1>Did Bill Cosby do anything wrong?</h1>
-        <div class="CV-Template">
-          <p>{nameValue}</p>
-          <p>{emailValue}</p>
-          <p>{phoneValue}</p>
-          <p>{collegeValue}</p>
-          <p>{majorValue}</p>
-          <p>{fromValue}</p>
-          <p>{toValue}</p>
+
+        <div className="CV-Template">
+          <div class="General">
+            <p>{nameValue}</p>
+            <p>{emailValue}</p>
+            <p>{phoneValue}</p>
+          </div>
+          <div className="Education">
+            <p>{collegeValue}</p>
+            <p>{majorValue}</p>
+            <p>{fromValue}</p>
+            <p>{toValue}</p>
+          </div>
+          <div className="Work">
+            <p>{companyValue}</p>
+            <p>{positionValue}</p>
+            <p>{taskValue}</p>
+            <p>{workFromValue}</p>
+            <p>{workToValue}</p>
+          </div>
         </div>
       </div>
     );
