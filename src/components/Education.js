@@ -10,7 +10,7 @@ export default class Education extends Component {
       <div>
         <form onSubmit={this.props.onSubmit}>
           <div>
-            <label>College/University:</label>
+            <label>College:</label>
             <input
               type="text"
               onChange={this.props.onChange}
@@ -18,7 +18,7 @@ export default class Education extends Component {
             />
           </div>
           <div>
-            <label>Major</label>
+            <label>Major:</label>
             <input
               type="text"
               onChange={this.props.onMajorChange}
@@ -27,7 +27,7 @@ export default class Education extends Component {
           </div>
 
           <div>
-            <label>From</label>
+            <label>From:</label>
             <input
               type="date"
               onChange={this.props.onDateChange}

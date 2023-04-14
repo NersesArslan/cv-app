@@ -26,7 +26,7 @@ export default class Work extends Component {
             />
           </div>
           <div>
-            <label>Main tasks</label>
+            <label>Job Description:</label>
             <textarea
               type="text"
               onChange={this.props.onTaskChange}
@@ -34,7 +34,7 @@ export default class Work extends Component {
             />
           </div>
           <div>
-            <label>From</label>
+            <label>From:</label>
             <input
               type="date"
               onChange={this.props.onWorkDateChange}
@@ -42,7 +42,7 @@ export default class Work extends Component {
             />
           </div>
           <div>
-            <label>To</label>
+            <label>To:</label>
             <input
               type="date"
               onChange={this.props.onToDate}

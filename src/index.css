@@ -20,17 +20,6 @@ body {
   justify-content: center;
 }
 
-.General,
-.Education,
-.Work {
-  margin-top: 100px;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -38,6 +27,8 @@ form {
   align-items: center;
   gap: 10px;
   width: 300px;
+  height: 300px;
+  background-color: #fee2e2;
 }
 
 input {
@@ -63,4 +54,9 @@ form > div {
 .CV-Template {
   border: 1px solid black;
   height: 400px;
+}
+
+#name {
+  font-size: 36px;
+  font-weight: 800;
 }

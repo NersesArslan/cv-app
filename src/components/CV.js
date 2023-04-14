@@ -22,9 +22,11 @@ export default class CV extends Component {
     } = this.props;
     return (
       <div className="CV-Template">
-        <p>{name}</p>
-        <p>{email}</p>
-        <p>{phone}</p>
+        <div className="General">
+          <p id="name">{name}</p>
+          <p>{email}</p>
+          <p>{phone}</p>
+        </div>
         <p>{college}</p>
         <p>{major}</p>
         <p>{eduDateFrom}</p>

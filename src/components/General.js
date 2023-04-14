@@ -10,7 +10,7 @@ export default class General extends Component {
       <div>
         <form onSubmit={this.props.onSubmit}>
           <div>
-            <label>Name</label>
+            <label>Name:</label>
             <input
               type="text"
               onChange={this.props.onChange}
@@ -18,7 +18,7 @@ export default class General extends Component {
             />
           </div>
           <div>
-            <label>E-mail</label>
+            <label>E-mail:</label>
             <input
               type="email"
               onChange={this.props.onEmailChange}
@@ -26,7 +26,7 @@ export default class General extends Component {
             />
           </div>
           <div>
-            <label>Phone Number</label>
+            <label>Phone Number:</label>
             <input
               type="text"
               onChange={this.props.onPhoneChange}
