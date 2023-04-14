@@ -2,6 +2,7 @@ import "./App.css";
 import React, { Component } from "react";
 import General from "./components/General";
 import Education from "./components/Education";
+import Work from "./components/Work";
 
 class App extends Component {
   constructor(props) {
@@ -82,6 +83,13 @@ class App extends Component {
       },
     });
   };
+  handleEndDate = (e) => {
+    this.setState({
+      to: {
+        text: e.target.value,
+      },
+    });
+  };
   onSubmitForm = (e) => {
     e.preventDefault();
     this.setState({
@@ -91,8 +99,6 @@ class App extends Component {
       email: { text: "" },
       phoneValue: this.state.phoneValue.concat(this.state.phone.number),
       phone: { number: "" },
-      fromValue: this.state.fromValue.concat(this.state.from.text),
-      from: { text: "" },
     });
   };
 
@@ -103,6 +109,10 @@ class App extends Component {
         college: { text: "" },
         majorValue: this.state.majorValue.concat(this.state.major.text),
         major: { text: "" },
+        fromValue: this.state.fromValue.concat(this.state.from.text),
+        from: { text: "" },
+        toValue: this.state.toValue.concat(this.state.to.text),
+        to: { text: "" },
       })
     );
   };
@@ -121,6 +131,8 @@ class App extends Component {
       majorValue,
       from,
       fromValue,
+      to,
+      toValue,
     } = this.state;
     return (
       <div>
@@ -141,12 +153,15 @@ class App extends Component {
             onMajorChange={this.handleMajor}
             majorValue={major.text}
             onDateChange={this.handleStartDate}
-            phoneValue={from.text}
+            fromValue={from.text}
+            onToDate={this.handleEndDate}
+            toValue={to.text}
             buttonValue={"Submit"}
             onSubmit={this.onSubmitEdu}
           />
+          <Work />
         </div>
-        <h1>Lie about it all you want, you'll still get underpaid.</h1>
+        <h1>Did Bill Cosby do anything wrong?</h1>
         <div class="CV-Template">
           <p>{nameValue}</p>
           <p>{emailValue}</p>
@@ -154,6 +169,7 @@ class App extends Component {
           <p>{collegeValue}</p>
           <p>{majorValue}</p>
           <p>{fromValue}</p>
+          <p>{toValue}</p>
         </div>
       </div>
     );

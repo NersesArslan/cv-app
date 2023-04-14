@@ -30,7 +30,7 @@ export default class Education extends Component {
             <input
               type="date"
               onChange={this.props.onDateChange}
-              value={this.props.phoneValue}
+              value={this.props.fromValue}
             />
           </div>
           <div>
@@ -38,7 +38,7 @@ export default class Education extends Component {
             <input
               type="date"
               onChange={this.props.onToDate}
-              value={this.props.phoneValue}
+              value={this.props.toValue}
             />
           </div>
           <button type="submit" value={this.props.buttonValue}>
