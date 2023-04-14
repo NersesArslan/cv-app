@@ -3,24 +3,18 @@ import React, { Component } from "react";
 import General from "./components/General";
 import Education from "./components/Education";
 import Work from "./components/Work";
+import CV from "./components/CV";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: {
-        text: "",
-      },
+      name: { text: "" },
       nameValue: [],
-      email: {
-        text: "",
-      },
+      email: { text: "" },
       emailValue: [],
-
-      phone: {
-        number: "",
-      },
+      phone: { number: "" },
       phoneValue: [],
       college: { text: "" },
       collegeValue: [],
@@ -240,27 +234,20 @@ class App extends Component {
             onSubmit={this.onSubmitWork}
           />
         </div>
-
-        <div className="CV-Template">
-          <div class="General">
-            <p>{nameValue}</p>
-            <p>{emailValue}</p>
-            <p>{phoneValue}</p>
-          </div>
-          <div className="Education">
-            <p>{collegeValue}</p>
-            <p>{majorValue}</p>
-            <p>{fromValue}</p>
-            <p>{toValue}</p>
-          </div>
-          <div className="Work">
-            <p>{companyValue}</p>
-            <p>{positionValue}</p>
-            <p>{taskValue}</p>
-            <p>{workFromValue}</p>
-            <p>{workToValue}</p>
-          </div>
-        </div>
+        <CV
+          name={nameValue}
+          email={emailValue}
+          phone={phoneValue}
+          college={collegeValue}
+          major={majorValue}
+          eduDateFrom={fromValue}
+          eduDateTo={toValue}
+          company={companyValue}
+          position={positionValue}
+          task={taskValue}
+          workDateFrom={workFromValue}
+          workDateTo={workToValue}
+        />
       </div>
     );
   }
