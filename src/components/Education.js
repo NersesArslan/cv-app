@@ -29,7 +29,7 @@ export default class Education extends Component {
           <div>
             <label>From:</label>
             <input
-              type="date"
+              type="number"
               onChange={this.props.onDateChange}
               value={this.props.fromValue}
             />
@@ -37,7 +37,7 @@ export default class Education extends Component {
           <div>
             <label>To</label>
             <input
-              type="date"
+              type="number"
               onChange={this.props.onToDate}
               value={this.props.toValue}
             />

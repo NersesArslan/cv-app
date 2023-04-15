@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-
+import Line from "./Line";
+import "../styles/general.css";
+import "../styles/education.css";
 export default class CV extends Component {
   constructor(props) {
     super(props);
@@ -23,19 +25,29 @@ export default class CV extends Component {
     return (
       <div className="CV-Template">
         <div className="General">
-          <p id="name">{name}</p>
-          <p>{email}</p>
-          <p>{phone}</p>
+          <p className="name">{name}</p>
+          <div className="test">
+            <p>{phone}</p>
+            <p>{email}</p>
+          </div>
         </div>
-        <p>{college}</p>
-        <p>{major}</p>
-        <p>{eduDateFrom}</p>
-        <p>{eduDateTo}</p>
-        <p>{company}</p>
-        <p>{position}</p>
-        <p>{task}</p>
-        <p>{workDateFrom}</p>
-        <p>{workDateTo}</p>
+        <Line />
+        <div className="Education">
+          <h2>Education</h2>
+          <p>{college}</p>
+          <p>{major}</p>
+          <p>
+            {eduDateFrom} - {eduDateTo}
+          </p>
+        </div>
+        <Line />
+        <div className="Work">
+          <p>{company}</p>
+          <p>{position}</p>
+          <p>{task}</p>
+          <p>{workDateFrom}</p>
+          <p>{workDateTo}</p>
+        </div>
       </div>
     );
   }
