@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Line from "./Line";
-import "../styles/general.css";
-import "../styles/education.css";
-import "../styles/work.css";
+import "../styles/CV.css";
 export default class CV extends Component {
   constructor(props) {
     super(props);

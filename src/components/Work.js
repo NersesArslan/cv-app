@@ -6,6 +6,7 @@ export default class Work extends Component {
   }
 
   render() {
+    const { onClick } = this.props;
     return (
       <div>
         <form onSubmit={this.props.onSubmit}>
@@ -50,9 +51,12 @@ export default class Work extends Component {
             />
           </div>
 
-          <button type="submit" value={this.props.buttonValue}>
-            Submit
-          </button>
+          <div className="buttons">
+            <button type="submit" value={this.props.buttonValue}>
+              Submit
+            </button>
+            <button onClick={onClick}>Edit</button>
+          </div>
         </form>
       </div>
     );

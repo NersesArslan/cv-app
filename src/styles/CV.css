@@ -1,3 +1,19 @@
+.Education {
+  padding: 10px 50px 20px;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.college > *,
+.major > *,
+.date > *,
+.company > *,
+.job > *,
+.job-description > * {
+  margin: 0;
+}
+
 .CV-Template {
   display: flex;
   flex-direction: column;
@@ -32,4 +48,11 @@ hr {
   text-align: center;
   height: 5px;
   width: 700px;
+}
+
+.Work {
+  padding: 10px 50px 20px;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
 }

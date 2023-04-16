@@ -126,18 +126,6 @@ class App extends Component {
     });
   };
 
-  editButton = (e) => {
-    e.preventDefault();
-    this.setState({
-      name: { text: this.state.nameValue },
-      nameValue: [],
-      email: { text: this.state.emailValue },
-      emailValue: [],
-      phone: { number: this.state.phoneValue },
-      phoneValue: [],
-    });
-  };
-
   onSubmitForm = (e) => {
     e.preventDefault();
     this.setState({
@@ -147,6 +135,18 @@ class App extends Component {
       email: { text: "" },
       phoneValue: this.state.phoneValue.concat(this.state.phone.number),
       phone: { number: "" },
+    });
+  };
+
+  editButton = (e) => {
+    e.preventDefault();
+    this.setState({
+      name: { text: this.state.nameValue },
+      nameValue: [],
+      email: { text: this.state.emailValue },
+      emailValue: [],
+      phone: { number: this.state.phoneValue },
+      phoneValue: [],
     });
   };
 
@@ -164,6 +164,20 @@ class App extends Component {
     });
   };
 
+  editEducationButton = (e) => {
+    e.preventDefault();
+    this.setState({
+      college: { text: this.state.collegeValue },
+      collegeValue: [],
+      major: { text: this.state.majorValue },
+      majorValue: [],
+      from: { text: this.state.fromValue },
+      fromValue: [],
+      to: { text: this.state.toValue },
+      toValue: [],
+    });
+  };
+
   onSubmitWork = (e) => {
     e.preventDefault();
     this.setState({
@@ -177,6 +191,22 @@ class App extends Component {
       workFrom: { text: "" },
       workToValue: this.state.workToValue.concat(this.state.workTo.text),
       workTo: { text: "" },
+    });
+  };
+
+  editWorkButton = (e) => {
+    e.preventDefault();
+    this.setState({
+      company: { text: this.state.companyValue },
+      companyValue: [],
+      position: { text: this.state.positionValue },
+      positionValue: [],
+      task: { text: this.state.taskValue },
+      taskValue: [],
+      workFrom: { text: this.state.workFromValue },
+      workFromValue: [],
+      workTo: { text: this.state.workToValue },
+      workToValue: [],
     });
   };
 
@@ -232,6 +262,7 @@ class App extends Component {
             toValue={to.text}
             buttonValue={"Submit"}
             onSubmit={this.onSubmitEdu}
+            onClick={this.editEducationButton}
           />
           <Work
             onChange={this.handleCompany}
@@ -246,6 +277,7 @@ class App extends Component {
             toDateValue={workTo.text}
             buttonValue={"Submit"}
             onSubmit={this.onSubmitWork}
+            onClick={this.editWorkButton}
           />
         </div>
         <CV
