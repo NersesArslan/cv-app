@@ -36,7 +36,7 @@ export default class Work extends Component {
           <div>
             <label>From:</label>
             <input
-              type="date"
+              type="number"
               onChange={this.props.onWorkDateChange}
               value={this.props.workDateValue}
             />
@@ -44,7 +44,7 @@ export default class Work extends Component {
           <div>
             <label>To:</label>
             <input
-              type="date"
+              type="number"
               onChange={this.props.onToDate}
               value={this.props.toDateValue}
             />

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Line from "./Line";
 import "../styles/general.css";
 import "../styles/education.css";
+import "../styles/work.css";
 export default class CV extends Component {
   constructor(props) {
     super(props);
@@ -34,19 +35,42 @@ export default class CV extends Component {
         <Line />
         <div className="Education">
           <h2>Education</h2>
-          <p>{college}</p>
-          <p>{major}</p>
-          <p>
-            {eduDateFrom} - {eduDateTo}
-          </p>
+          <div className="college">
+            <h4>College</h4>
+            <p>{college}</p>
+          </div>
+          <div className="major">
+            <h4>Major</h4>
+            <p>{major}</p>
+          </div>
+          <div className="date">
+            <h4>Year</h4>
+            <p>
+              {eduDateFrom} - {eduDateTo}
+            </p>
+          </div>
         </div>
         <Line />
         <div className="Work">
-          <p>{company}</p>
-          <p>{position}</p>
-          <p>{task}</p>
-          <p>{workDateFrom}</p>
-          <p>{workDateTo}</p>
+          <h2>Work History</h2>
+          <div className="company">
+            <h4>Company</h4>
+            <p>{company}</p>
+          </div>
+          <div className="job">
+            <h4>Job Title</h4>
+            <p>{position}</p>
+          </div>
+          <div className="job-description">
+            <h4>Job Description</h4>
+            <p>{task}</p>
+          </div>
+          <div className="date">
+            <h4>Year</h4>
+            <p>
+              {workDateFrom} - {workDateTo}
+            </p>
+          </div>
         </div>
       </div>
     );

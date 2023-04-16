@@ -1,0 +1,6 @@
+.Work {
+  padding: 10px 50px 20px;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+}

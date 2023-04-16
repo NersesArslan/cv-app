@@ -6,37 +6,36 @@ export default class General extends Component {
   }
 
   render() {
+    const {
+      onSubmit,
+      onChange,
+      value,
+      onEmailChange,
+      emailValue,
+      onPhoneChange,
+      phoneValue,
+      buttonValue,
+      onClick,
+    } = this.props;
     return (
       <div>
-        <form onSubmit={this.props.onSubmit}>
+        <form onSubmit={onSubmit}>
           <div>
             <label>Name:</label>
-            <input
-              type="text"
-              onChange={this.props.onChange}
-              value={this.props.value}
-            />
+            <input type="text" onChange={onChange} value={value} />
           </div>
           <div>
             <label>E-mail:</label>
-            <input
-              type="email"
-              onChange={this.props.onEmailChange}
-              value={this.props.emailValue}
-            />
+            <input type="email" onChange={onEmailChange} value={emailValue} />
           </div>
           <div>
             <label>Phone Number:</label>
-            <input
-              type="text"
-              onChange={this.props.onPhoneChange}
-              value={this.props.phoneValue}
-            />
+            <input type="text" onChange={onPhoneChange} value={phoneValue} />
           </div>
-
-          <button type="submit" value={this.props.buttonValue}>
+          <button type="submit" value={buttonValue}>
             Submit
           </button>
+          <button onClick={onClick}>Edit</button>
         </form>
       </div>
     );

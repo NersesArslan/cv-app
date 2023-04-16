@@ -47,6 +47,7 @@ class App extends Component {
       },
     });
   };
+
   handleEmail = (e) => {
     this.setState({
       email: {
@@ -122,6 +123,18 @@ class App extends Component {
       workTo: {
         text: e.target.value,
       },
+    });
+  };
+
+  editButton = (e) => {
+    e.preventDefault();
+    this.setState({
+      name: { text: this.state.nameValue },
+      nameValue: [],
+      email: { text: this.state.emailValue },
+      emailValue: [],
+      phone: { number: this.state.phoneValue },
+      phoneValue: [],
     });
   };
 
@@ -206,6 +219,7 @@ class App extends Component {
             phoneValue={phone.number}
             buttonValue={"Submit"}
             onSubmit={this.onSubmitForm}
+            onClick={this.editButton}
           />
           <Education
             onChange={this.handleCollege}
